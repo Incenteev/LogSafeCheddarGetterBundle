@@ -20,6 +20,12 @@
         "symfony/framework-bundle": ">=2.0,<2.2-dev",
         "cheddar-getter/client": "*"
     },
+    "recommend": {
+        "kriswallsmith/buzz": ">=0.5,<0.6"
+    },
+    "suggest": {
+        "sensio/buzz-bundle": ">=0.1,<1.0"
+    },
     "autoload": {
         "psr-0": { "Logsafe\\CheddarGetterBundle": "" }
     },

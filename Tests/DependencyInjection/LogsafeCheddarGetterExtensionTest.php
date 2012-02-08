@@ -88,7 +88,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertHasDefinition('logsafe_cheddar_getter.client');
     }
 
-    public function testAdapterService()
+    public function testServiceAdapter()
     {
         $this->container = new ContainerBuilder();
         $loader = new LogsafeCheddarGetterExtension();
@@ -100,6 +100,36 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
         $loader->load(array($config), $this->container);
 
         $this->assertAlias('acme.http_adapter', 'logsafe_cheddar_getter.http_adapter');
+    }
+
+    public function testBuzzAdapter()
+    {
+        $this->container = new ContainerBuilder();
+        $loader = new LogsafeCheddarGetterExtension();
+        $config = array(
+            'username' => 'me@example.com',
+            'password' => 'foo',
+            'http_adapter' => array('type' => 'buzz'),
+        );
+        $loader->load(array($config), $this->container);
+
+        $this->assertAlias('logsafe_cheddar_getter.http_adapter.buzz', 'logsafe_cheddar_getter.http_adapter');
+        $this->assertNotHasDefinition('logsafe_cheddar_getter.http_adapter.buzz.browser');
+    }
+
+    public function testCustomBuzzAdapter()
+    {
+        $this->container = new ContainerBuilder();
+        $loader = new LogsafeCheddarGetterExtension();
+        $config = array(
+            'username' => 'me@example.com',
+            'password' => 'foo',
+            'http_adapter' => array('type' => 'buzz', 'id' => 'buzz'),
+        );
+        $loader->load(array($config), $this->container);
+
+        $this->assertAlias('logsafe_cheddar_getter.http_adapter.buzz', 'logsafe_cheddar_getter.http_adapter');
+        $this->assertAlias('buzz', 'logsafe_cheddar_getter.http_adapter.buzz.browser');
     }
 
     public function testShortSyntaxAdapter()

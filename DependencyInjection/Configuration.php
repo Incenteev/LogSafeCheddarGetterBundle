@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('logsafe_cheddar_getter');
 
-        $httpAdapterTypes = array('curl', 'service');
+        $httpAdapterTypes = array('curl', 'buzz', 'service');
 
         $rootNode
             ->children()

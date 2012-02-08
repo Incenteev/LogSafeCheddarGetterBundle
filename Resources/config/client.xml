@@ -21,5 +21,9 @@
         </service>
 
         <service id="logsafe_cheddar_getter.http_adapter.curl" class="%logsafe_cheddar_getter.http_adapter.curl.class%" public="false" />
+
+        <service id="logsafe_cheddar_getter.http_adapter.buzz" class="%logsafe_cheddar_getter.http_adapter.buzz.class%" public="false">
+            <argument type="service" id="logsafe_cheddar_getter.http_adapter.buzz.browser" on-invalid="null" />
+        </service>
     </services>
 </container>

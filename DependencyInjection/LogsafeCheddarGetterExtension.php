@@ -12,6 +12,7 @@
 namespace Logsafe\CheddarGetterBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -28,6 +29,15 @@ class LogsafeCheddarGetterExtension extends Extension
         switch ($config['http_adapter']['type']) {
             case 'service':
                 $container->setAlias('logsafe_cheddar_getter.http_adapter', $config['http_adapter']['id']);
+                break;
+
+            case 'buzz':
+                if (isset($config['http_adapter']['id'])) {
+                    // Uses a preconfigured Buzz\Browser (for instance the "buzz" service from SensioBuzzBundle)
+                    // Otherwise, a new one will be created by the adapter
+                    $container->setAlias('logsafe_cheddar_getter.http_adapter.buzz.browser', new Alias($config['http_adapter']['id'], false));
+                }
+                $container->setAlias('logsafe_cheddar_getter.http_adapter', 'logsafe_cheddar_getter.http_adapter.buzz');
                 break;
 
             default:

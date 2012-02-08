@@ -96,8 +96,8 @@ logsafe_cheddar_getter:
     product_code: ~
     product_id: ~
     http_adapter:
-        type: curl # can be "curl" or "service"
-        id: ~ # the service id when using "service"
+        type: curl # can be "curl", "buzz" or "service"
+        id: ~ # the service id when using "service" (mandatory) or "buzz" (optional)
 ```
 
 .. _CheddarGetter: https://cheddargetter.com/developers

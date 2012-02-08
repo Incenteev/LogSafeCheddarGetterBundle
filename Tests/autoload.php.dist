@@ -16,7 +16,8 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
-    'Symfony'                => $vendorDir.'/symfony/src',
+    'Symfony' => $vendorDir.'/symfony/src',
+    'Buzz' => $vendorDir.'/buzz/lib',
 ));
 $loader->registerPrefixes(array(
     'CheddarGetter_' => $vendorDir.'/cheddargetter-client-php',
