@@ -19,6 +19,9 @@
             <argument>%logsafe_cheddar_getter.product_code%</argument>
             <argument>%logsafe_cheddar_getter.product_id%</argument>
             <argument type="service" id="logsafe_cheddar_getter.http_adapter" />
+            <call method="setRequestAdapter">
+                <argument type="service" id="logsafe_cheddar_getter.request_adapter" />
+            </call>
         </service>
 
         <service id="logsafe_cheddar_getter.http_adapter.curl" class="%logsafe_cheddar_getter.http_adapter.curl.class%" public="false" />
