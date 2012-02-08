@@ -1,0 +1,27 @@
+{
+    "name": "logsafe/cheddar-getter-bundle",
+    "type": "symfony-bundle",
+    "description": "Integration bundle for the official CheddarGetter PHP client",
+    "keywords": ["CheddarGetter"],
+    "homepage": "https://github.com/LogSafe/LogsafeCheddarGetterBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christophe Coevoet",
+            "email": "stof@notk.org"
+        },
+        {
+            "name": "LogSage team",
+            "homepage": "http://logsafe.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.0,<2.2-dev",
+        "cheddar-getter/client": "*"
+    },
+    "autoload": {
+        "psr-0": { "Logsafe\\CheddarGetterBundle": "" }
+    },
+    "target-dir": "Logsafe/CheddarGetterBundle"
+}
