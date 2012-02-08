@@ -85,6 +85,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertParameter(null, 'logsafe_cheddar_getter.product_id');
         $this->assertParameter('https://cheddargetter.com', 'logsafe_cheddar_getter.url');
         $this->assertAlias('logsafe_cheddar_getter.http_adapter.curl', 'logsafe_cheddar_getter.http_adapter');
+        $this->assertHasDefinition('logsafe_cheddar_getter.client');
     }
 
     public function testAdapterService()
