@@ -19,7 +19,7 @@ if (isset($argv[1])) {
 $vendorDir = __DIR__;
 $deps = array(
     array('symfony', 'http://github.com/symfony/symfony', isset($_SERVER['SYMFONY_VERSION']) ? $_SERVER['SYMFONY_VERSION'] : 'origin/master'),
-    array('cheddargetter-client-php', 'http://github.com/marcguyer/cheddargetter-client-php.git', 'origin/master'),
+    array('CheddarGetter', 'http://github.com/marcguyer/cheddargetter-client-php.git', 'origin/master'),
     array('buzz', 'http://github.com/kriswallsmith/Buzz.git', 'origin/master')
 );
 

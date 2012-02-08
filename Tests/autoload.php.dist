@@ -20,7 +20,7 @@ $loader->registerNamespaces(array(
     'Buzz' => $vendorDir.'/buzz/lib',
 ));
 $loader->registerPrefixes(array(
-    'CheddarGetter_' => $vendorDir.'/cheddargetter-client-php',
+    'CheddarGetter_' => $vendorDir,
 ));
 $loader->register();
 
