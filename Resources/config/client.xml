@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="logsafe_cheddar_getter.client.class">CheddarGetter_Client</parameter>
+        <parameter key="logsafe_cheddar_getter.http_adapter.curl.class">CheddarGetter_Client_CurlAdapter</parameter>
+        <parameter key="logsafe_cheddar_getter.request_adapter.class"></parameter>
+    </parameters>
+
+    <services>
+        <service id="logsafe_cheddar_getter.client" class="%logsafe_cheddar_getter.client.class%">
+            <argument>%logsafe_cheddar_getter.url%</argument>
+            <argument>%logsafe_cheddar_getter.username%</argument>
+            <argument>%logsafe_cheddar_getter.password%</argument>
+            <argument>%logsafe_cheddar_getter.product_code%</argument>
+            <argument>%logsafe_cheddar_getter.product_id%</argument>
+            <argument type="service" id="logsafe_cheddar_getter.http_adapter" />
+        </service>
+
+        <service id="logsafe_cheddar_getter.http_adapter.curl" class="%logsafe_cheddar_getter.http_adapter.curl.class%" public="false" />
+    </services>
+</container>
