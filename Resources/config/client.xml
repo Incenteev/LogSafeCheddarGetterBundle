@@ -7,7 +7,8 @@
     <parameters>
         <parameter key="logsafe_cheddar_getter.client.class">CheddarGetter_Client</parameter>
         <parameter key="logsafe_cheddar_getter.http_adapter.curl.class">CheddarGetter_Client_CurlAdapter</parameter>
-        <parameter key="logsafe_cheddar_getter.request_adapter.class"></parameter>
+        <parameter key="logsafe_cheddar_getter.request_adapter.class">Logsafe\CheddarGetterBundle\Http\SymfonyAdapter</parameter>
+        <parameter key="logsafe_cheddar_getter.request_adapter.listener.class">Logsafe\CheddarGetterBundle\EventListener\ResponseListener</parameter>
     </parameters>
 
     <services>
@@ -24,6 +25,15 @@
 
         <service id="logsafe_cheddar_getter.http_adapter.buzz" class="%logsafe_cheddar_getter.http_adapter.buzz.class%" public="false">
             <argument type="service" id="logsafe_cheddar_getter.http_adapter.buzz.browser" on-invalid="null" />
+        </service>
+
+        <service id="logsafe_cheddar_getter.request_adapter" class="%logsafe_cheddar_getter.request_adapter.class%">
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="logsafe_cheddar_getter.request_adapter.listener" class="%logsafe_cheddar_getter.request_adapter.listener.class%">
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
+            <argument type="service" id="logsafe_cheddar_getter.request_adapter" />
         </service>
     </services>
 </container>
