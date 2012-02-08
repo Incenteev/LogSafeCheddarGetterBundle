@@ -1,0 +1,35 @@
+<?php
+
+/*
+ * This file is part of the LogsafeCheddarGetterBundle package.
+ *
+ * (c) LogSafe <http://logsafe.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+$vendorDir = __DIR__.'/../vendor';
+require_once $vendorDir.'/symfony/src/Symfony/Component/ClassLoader/UniversalClassLoader.php';
+
+use Symfony\Component\ClassLoader\UniversalClassLoader;
+
+$loader = new UniversalClassLoader();
+$loader->registerNamespaces(array(
+    'Symfony'                => $vendorDir.'/symfony/src',
+));
+$loader->registerPrefixes(array(
+    'CheddarGetter_' => $vendorDir.'/cheddargetter-client-php',
+));
+$loader->register();
+
+spl_autoload_register(function($class) {
+    if (0 === strpos($class, 'Logsafe\\CheddarGetterBundle\\')) {
+        $path = __DIR__.'/../'.implode('/', array_slice(explode('\\', $class), 2)).'.php';
+        if (!stream_resolve_include_path($path)) {
+            return false;
+        }
+        require_once $path;
+        return true;
+    }
+});
