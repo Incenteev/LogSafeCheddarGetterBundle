@@ -20,7 +20,7 @@ This can be done in two different ways:
     target=cheddargetter-client-php/CheddarGetter
 
 [LogsafeCheddarGetterBundle]
-    git=http://github.com/LogSafe/LogsafeCheddarGetterBundle.git
+    git=http://github.com/LogSafe/LogSafeCheddarGetterBundle.git
     target=bundles/Logsafe/CheddarGetterBundle
 ```
 
@@ -28,7 +28,7 @@ This can be done in two different ways:
 
 ```bash
 $ git submodule add http://github.com/marcguyer/cheddargetter-client-php.git vendor/cheddargetter-client-php/CheddarGetter
-$ git submodule add http://github.com/LogSafe/LogsafeCheddarGetterBundle.git vendor/bundles/Logsafe/CheddarGetterBundle
+$ git submodule add http://github.com/LogSafe/LogSafeCheddarGetterBundle.git vendor/bundles/Logsafe/CheddarGetterBundle
 ```
 
 Register the autoloading
