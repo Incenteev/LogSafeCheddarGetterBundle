@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the LogsafeCheddarGetterBundle package.
+ * This file is part of the LogSafeCheddarGetterBundle package.
  *
  * (c) LogSafe <http://logsafe.com/>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Logsafe\CheddarGetterBundle\Tests\Client;
+namespace LogSafe\CheddarGetterBundle\Tests\Client;
 
-use Logsafe\CheddarGetterBundle\Client\BuzzAdapter;
+use LogSafe\CheddarGetterBundle\Client\BuzzAdapter;
 
 class BuzzAdapterTest extends \PHPUnit_Framework_TestCase
 {

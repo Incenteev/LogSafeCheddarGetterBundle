@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the LogsafeCheddarGetterBundle package.
+ * This file is part of the LogSafeCheddarGetterBundle package.
  *
  * (c) LogSafe <http://logsafe.com/>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Logsafe\CheddarGetterBundle\DependencyInjection;
+namespace LogSafe\CheddarGetterBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

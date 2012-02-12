@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the LogsafeCheddarGetterBundle package.
+ * This file is part of the LogSafeCheddarGetterBundle package.
  *
  * (c) LogSafe <http://logsafe.com/>
  *
@@ -25,7 +25,7 @@ $loader->registerPrefixes(array(
 $loader->register();
 
 spl_autoload_register(function($class) {
-    if (0 === strpos($class, 'Logsafe\\CheddarGetterBundle\\')) {
+    if (0 === strpos($class, 'LogSafe\\CheddarGetterBundle\\')) {
         $path = __DIR__.'/../'.implode('/', array_slice(explode('\\', $class), 2)).'.php';
         if (!stream_resolve_include_path($path)) {
             return false;

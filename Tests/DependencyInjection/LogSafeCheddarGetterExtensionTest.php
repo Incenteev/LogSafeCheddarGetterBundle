@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the LogsafeCheddarGetterBundle package.
+ * This file is part of the LogSafeCheddarGetterBundle package.
  *
  * (c) LogSafe <http://logsafe.com/>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Logsafe\CheddarGetterBundle\Tests\DependencyInjection;
+namespace LogSafe\CheddarGetterBundle\Tests\DependencyInjection;
 
-use Logsafe\CheddarGetterBundle\DependencyInjection\LogsafeCheddarGetterExtension;
+use LogSafe\CheddarGetterBundle\DependencyInjection\LogSafeCheddarGetterExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
+class LogSafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var ContainerBuilder
@@ -26,7 +26,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testMissingUsername()
     {
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array('password' => 'foo');
         $loader->load(array($config), new ContainerBuilder());
     }
@@ -36,7 +36,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testMissingPassword()
     {
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array('username' => 'me@example.com');
         $loader->load(array($config), new ContainerBuilder());
     }
@@ -46,7 +46,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidAdapter()
     {
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'me@example.com',
             'password' => 'foo',
@@ -60,7 +60,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testMissingAdapterId()
     {
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'me@example.com',
             'password' => 'foo',
@@ -72,7 +72,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
     public function testDefault()
     {
         $this->container = new ContainerBuilder();
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'me@example.com',
             'password' => 'foo',
@@ -91,7 +91,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
     public function testServiceAdapter()
     {
         $this->container = new ContainerBuilder();
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'me@example.com',
             'password' => 'foo',
@@ -105,7 +105,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
     public function testBuzzAdapter()
     {
         $this->container = new ContainerBuilder();
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'me@example.com',
             'password' => 'foo',
@@ -120,7 +120,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
     public function testCustomBuzzAdapter()
     {
         $this->container = new ContainerBuilder();
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'me@example.com',
             'password' => 'foo',
@@ -135,7 +135,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
     public function testShortSyntaxAdapter()
     {
         $this->container = new ContainerBuilder();
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'me@example.com',
             'password' => 'foo',
@@ -149,7 +149,7 @@ class LogsafeCheddarGetterExtensionTest extends \PHPUnit_Framework_TestCase
     public function testCustomSettings()
     {
         $this->container = new ContainerBuilder();
-        $loader = new LogsafeCheddarGetterExtension();
+        $loader = new LogSafeCheddarGetterExtension();
         $config = array(
             'username' => 'you@example.com',
             'password' => 'foobar',

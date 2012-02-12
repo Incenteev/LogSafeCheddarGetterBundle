@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the LogsafeCheddarGetterBundle package.
+ * This file is part of the LogSafeCheddarGetterBundle package.
  *
  * (c) LogSafe <http://logsafe.com/>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Logsafe\CheddarGetterBundle\DependencyInjection;
+namespace LogSafe\CheddarGetterBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;
@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class LogsafeCheddarGetterExtension extends Extension
+class LogSafeCheddarGetterExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -48,5 +48,10 @@ class LogsafeCheddarGetterExtension extends Extension
         foreach ($config as $key => $value) {
             $container->setParameter(sprintf('%s.%s', $this->getAlias(), $key), $value);
         }
+    }
+
+    public function getAlias()
+    {
+        return 'logsafe_cheddar_getter';
     }
 }

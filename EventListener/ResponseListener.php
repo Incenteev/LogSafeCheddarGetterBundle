@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the LogsafeCheddarGetterBundle package.
+ * This file is part of the LogSafeCheddarGetterBundle package.
  *
  * (c) LogSafe <http://logsafe.com/>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Logsafe\CheddarGetterBundle\EventListener;
+namespace LogSafe\CheddarGetterBundle\EventListener;
 
-use Logsafe\CheddarGetterBundle\Http\SymfonyAdapter;
+use LogSafe\CheddarGetterBundle\Http\SymfonyAdapter;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;

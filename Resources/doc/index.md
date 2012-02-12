@@ -19,16 +19,16 @@ This can be done in two different ways:
     git=http://github.com/marcguyer/cheddargetter-client-php.git
     target=cheddargetter-client-php/CheddarGetter
 
-[LogsafeCheddarGetterBundle]
+[LogSafeCheddarGetterBundle]
     git=http://github.com/LogSafe/LogSafeCheddarGetterBundle.git
-    target=bundles/Logsafe/CheddarGetterBundle
+    target=bundles/LogSafe/CheddarGetterBundle
 ```
 
 **Method #2**) Use git submodules
 
 ```bash
 $ git submodule add http://github.com/marcguyer/cheddargetter-client-php.git vendor/cheddargetter-client-php/CheddarGetter
-$ git submodule add http://github.com/LogSafe/LogSafeCheddarGetterBundle.git vendor/bundles/Logsafe/CheddarGetterBundle
+$ git submodule add http://github.com/LogSafe/LogSafeCheddarGetterBundle.git vendor/bundles/LogSafe/CheddarGetterBundle
 ```
 
 Register the autoloading
@@ -48,7 +48,7 @@ $loader->registerPrefixes(array(
 ));
 ```
 
-Add LogsafeCheddarGetterBundle to your application kernel
+Add LogSafeCheddarGetterBundle to your application kernel
 ---------------------------------------------------------
 
 ```php
@@ -59,7 +59,7 @@ public function registerBundles()
 {
     return array(
         // ...
-        new Logsafe\CheddarGetterBundle\LogsafeCheddarGetterBundle(),
+        new LogSafe\CheddarGetterBundle\LogSafeCheddarGetterBundle(),
         // ...
     );
 }

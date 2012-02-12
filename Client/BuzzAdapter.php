@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the LogsafeCheddarGetterBundle package.
+ * This file is part of the LogSafeCheddarGetterBundle package.
  *
  * (c) LogSafe <http://logsafe.com/>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Logsafe\CheddarGetterBundle\Client;
+namespace LogSafe\CheddarGetterBundle\Client;
 
 use Buzz\Browser;
 use Buzz\Message\Request;
@@ -34,7 +34,7 @@ class BuzzAdapter implements \CheddarGetter_Client_AdapterInterface
      * @param string $password Password
      * @param array|null $args HTTP post key value pairs
      * @return string Body of the response from the CheddarGetter API
-     * @throws CheddarGetter_Client_Exception
+     * @throws \CheddarGetter_Client_Exception
      */
     public function request($url, $username, $password, array $args = null)
     {

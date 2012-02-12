@@ -7,9 +7,9 @@
     <parameters>
         <parameter key="logsafe_cheddar_getter.client.class">CheddarGetter_Client</parameter>
         <parameter key="logsafe_cheddar_getter.http_adapter.curl.class">CheddarGetter_Client_CurlAdapter</parameter>
-        <parameter key="logsafe_cheddar_getter.http_adapter.buzz.class">Logsafe\CheddarGetterBundle\Client\BuzzAdapter</parameter>
-        <parameter key="logsafe_cheddar_getter.request_adapter.class">Logsafe\CheddarGetterBundle\Http\SymfonyAdapter</parameter>
-        <parameter key="logsafe_cheddar_getter.request_adapter.listener.class">Logsafe\CheddarGetterBundle\EventListener\ResponseListener</parameter>
+        <parameter key="logsafe_cheddar_getter.http_adapter.buzz.class">LogSafe\CheddarGetterBundle\Client\BuzzAdapter</parameter>
+        <parameter key="logsafe_cheddar_getter.request_adapter.class">LogSafe\CheddarGetterBundle\Http\SymfonyAdapter</parameter>
+        <parameter key="logsafe_cheddar_getter.request_adapter.listener.class">LogSafe\CheddarGetterBundle\EventListener\ResponseListener</parameter>
     </parameters>
 
     <services>
